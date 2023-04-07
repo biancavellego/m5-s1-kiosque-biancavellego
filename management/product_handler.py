@@ -111,8 +111,6 @@ def menu_report():
 
     return f"Product Count: {product_count} - Average Price: {round(average_price, 2)} - Most Common Type: {most_common_type}"
 
-# Average Price: Média dos preços de todos os produtos do menu, arredondada para 2 casas decimais no máximo.
-
 
 def add_product_extra(menu, **kwargs):
     ...
