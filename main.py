@@ -2,9 +2,14 @@ from menu import products
 from management.product_handler import get_product_by_id
 from management.product_handler import get_products_by_type
 from management.product_handler import add_product
+from management.product_handler import menu_report
 from management.tab_handler import calculate_tab
 
 if __name__ == "__main__":
+    print(menu_report())
+    print(get_product_by_id("a"))
+    print(get_products_by_type(1))
+    
     table_1 = [
         {"_id": 1, "amount": 5},
         {"_id": 19, "amount": 5}
