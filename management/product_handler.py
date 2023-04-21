@@ -8,46 +8,37 @@ na raiz do projeto.
 
 
 def get_product_by_id(_id):
+    # try:
+    #     if type(_id) != "int":
+    #         raise TypeError()
+    # except TypeError:
+    #     return "product id must be an int"
 
-    try:
-        if type(_id) != "int":
-            raise TypeError()
-    except TypeError:
-        return "product id must be an int"
+    product_dict = {}
+    for product in products:
+        if product["_id"] == _id:
+            product_dict.update(product)
 
-    product = {}
-
-    for element in products:
-        for key, value in element.items():
-            if key == "_id" and value == _id:
-                product = element
-                break
-
-    return product
+    return product_dict
 
 
 def get_products_by_type(product_type):
-
-    try:
-        if type(product_type) != "str":
-            raise TypeError()
-    except TypeError:
-        return "product id must be an str"
+    # try:
+    #     if type(product_type) != "str":
+    #         raise TypeError()
+    # except TypeError:
+    #     return "product id must be an str"
 
     list = []
-
-    for item in products:
-        if item.get("type") == product_type:
-            list.append(item)
+    for product in products:
+        if product.get("type") == product_type:
+            list.append(product)
 
     return list
 
 
 def add_product(menu, **kwargs):
-
-    required_attributes = [
-        "title", "price", "rating", "description", "type"
-    ]
+    required_attributes = ["title", "price", "rating", "description", "type"]
     received_attributes = []
 
     for key in kwargs.keys():
@@ -84,7 +75,6 @@ def add_product(menu, **kwargs):
 
 
 def menu_report():
-
     product_count = len(products)
     average_price = 0
     most_common_type = None
