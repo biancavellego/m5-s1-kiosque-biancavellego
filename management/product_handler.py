@@ -8,11 +8,8 @@ na raiz do projeto.
 
 
 def get_product_by_id(_id):
-    # try:
-    #     if type(_id) != "int":
-    #         raise TypeError()
-    # except TypeError:
-    #     return "product id must be an int"
+    if type(_id) != "int":
+        raise TypeError("product id must be an int")
 
     product_dict = {}
     for product in products:
@@ -23,11 +20,8 @@ def get_product_by_id(_id):
 
 
 def get_products_by_type(product_type):
-    # try:
-    #     if type(product_type) != "str":
-    #         raise TypeError()
-    # except TypeError:
-    #     return "product id must be an str"
+    if type(product_type) != "str":
+        raise TypeError("product type must be a str")
 
     list = []
     for product in products:
@@ -99,7 +93,7 @@ def menu_report():
                 if max_number == value:
                     most_common_type = key
 
-    return f"Product Count: {product_count} - Average Price: {round(average_price, 2)} - Most Common Type: {most_common_type}"
+    return f"Products Count: {product_count} - Average Price: ${round(average_price, 2)} - Most Common Type: {most_common_type}"
 
 
 def add_product_extra(menu, **kwargs):
