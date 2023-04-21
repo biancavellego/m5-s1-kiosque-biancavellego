@@ -2,7 +2,6 @@ from menu import products
 
 
 def calculate_tab(list_of_dictionaries):
-
     item_subtotal_list = []
     result = {}
 
@@ -21,5 +20,5 @@ def calculate_tab(list_of_dictionaries):
 
             for price in item_subtotal_list:
                 subtotal += price
-                result = {"subtotal": "{:.2f}".format(subtotal)}
+                result = {"subtotal": "$" + ("%.2f" % (subtotal)).rstrip("0")}
     return result
